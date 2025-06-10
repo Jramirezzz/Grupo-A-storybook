@@ -1,0 +1,58 @@
+<div class="item-card">
+  <!-- Header con título, subtítulo y descripción -->
+  <storybook-header-momentos
+    [title]="'Crear una medición'"
+    [subtitle]="'Permita de nuevas mediciones de participación'"
+    [content]="'Es el proceso de evaluar cuán involucradas están las personas en una actividad, usando indicadores como asistencia, interacciones o aportes...'"
+    [fullWidth]="true"
+  />
+
+  <!-- Input: nombre de la medición -->
+  <app-input
+    label="Nombre de la medición"
+    placeholder="Inserte el nombre"
+    [type]="'textField'"
+    [state]="'enable'"
+    [showRequired]="true"
+    [showIcon]="true"
+    [value]="name"
+    (valueChange)="name = $event"
+  ></app-input>
+
+  <!-- Input: descripción de la medición -->
+  <app-input
+    label="Descripción de la medición"
+    placeholder="Inserte comentarios u observaciones"
+    [type]="'multiline'"
+    [state]="'enable'"
+    [value]="description"
+    (valueChange)="description = $event"
+  ></app-input>
+
+  <!-- Checkbox visual -->
+  <storybook-checkbox-text
+    [label]="'Implementación obligatoria'"
+  ></storybook-checkbox-text>
+
+  <!-- Botones -->
+  <div class="button-group">
+    <app-button
+      [label]="'Crear medición'"
+      [size]="'medium'"
+      [color]="'primary'"
+      [styles]="'filled'"
+      [state]="'active'"
+      [width]="'100%'"
+      (onClick)="handleCreate()"
+    ></app-button>
+
+    <app-button
+      [label]="'Cancelar creación'"
+      [size]="'medium'"
+      [color]="'error'"
+      [styles]="'text'"
+      [state]="'active'"
+      [width]="'100%'"
+    ></app-button>
+  </div>
+</div>
